@@ -12,7 +12,11 @@
         $data = $_POST['data'];
         $sędzia = $_POST['sędzia'];
 
-        $db = new mysql('localhost', 'root', '', 'egzamin2')
+        $db = new mysqli('localhost', 'root', '', 'egzamin2');
+
+        $sql = "INSERT INTO zawody_wedkarskie (id, Karty_wedkarskie_id, Lowisko_id, data_zawodow, sedzia) VALUES (NULL, '2', '$łowisko', '$data', '$sędzia')";
+        $wynik = $db->query($sql);
+        $db->close();
     ?>
 </body>
 </html>
